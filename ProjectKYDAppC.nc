@@ -15,15 +15,16 @@ implementation {
   components new AMSenderC(AM_MY_MSG);
   components new AMReceiverC(AM_MY_MSG);
   components PrintfC;
+    components SerialStartC;
 
 /****** INTERFACES *****/
   //Boot interface
   App.Boot -> MainC.Boot;
   
   //Timer interface
-  App.NodeTimer -> node_t;
+  App.MilliTimer -> node_t;
   
-  App.SplitControl -> ActiveMessageC;
+  App.AMControl -> ActiveMessageC;
   App.AMSend -> AMSenderC;
   App.Packet -> AMSenderC;
   App.Receive -> AMReceiverC;

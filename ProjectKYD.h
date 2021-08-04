@@ -1,5 +1,5 @@
-#ifndef PROJECTKYD_H
-#define PROJECTKYD_H
+#ifndef RADIO_COUNT_TO_LEDS_H
+#define RADIO_COUNT_TO_LEDS_H
 
 //payload of the msg
 typedef nx_struct my_msg {

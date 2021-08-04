@@ -2,150 +2,124 @@
 #include "Timer.h"
 #include "printf.h"
 
-module ProjectKYDC {
+module ProjectKYDC @safe() {
 
   uses {
-  /****** INTERFACES *****/
+
 	interface Boot; 
 	
-    interface SplitControl; //to turn on the radio
+    interface SplitControl as AMControl; //to turn on the radio
 	interface AMSend;
 	interface Receive;
 	interface Packet;
 	
-	interface Timer<TMilli> as NodeTimer; //timer for current node
+	interface Timer<TMilli> as MilliTimer; //timer for current node
 
   }
 
 } implementation {
 
-  struct Node{
-  	uint8_t rec_id;
-  	uint8_t counter;
-  	struct Node *next;
-  };
+  uint8_t rec_id[20];
+  uint8_t rec_counter[20];
+  
+  void init_ID(){
+  	uint8_t i = 0;
+  	while(i<20){
+  		rec_id[i] = 0;
+  		i++;
+  	}
+  }
   
   message_t packet;
-  struct Node* head = NULL;
-  uint8_t rec_counter;
+  uint8_t index;
 
-  void sendReq();
-  void insertNode(struct Node** h, uint8_t id, uint8_t count);
-  int searchCounter(struct Node** h, uint8_t id);
-  void updateCounter(struct Node** h, uint8_t id, uint8_t count);
+  void setIndex(uint8_t id){
+  	uint8_t i = 0;
+  	while(rec_id[i]!= 0 || rec_id[i]!=id)
+  		i++;
+  	
+  	index = i;
+  }
+        
+ 
+  event void Boot.booted() {
+	call AMControl.start();
+  }
+
+  //***************** SplitControl interface ********************//
+  event void AMControl.startDone(error_t err){
+    if(err == SUCCESS){
+    	printf("success\n");
+    	printfflush();
+		call MilliTimer.startPeriodic(500);
+		printf("mote started: %d\n", TOS_NODE_ID);
+		
+    }else{
+    	call AMControl.start();
+    }
+  }
   
-  
-  //***************** Send request function ********************//
-  void sendReq() {
-	my_msg_t* mess = (my_msg_t*)(call Packet.getPayload(&packet, sizeof(my_msg_t)));
+  event void AMControl.stopDone(error_t err){}
+
+  //***************** MilliTimer interface ********************//
+  event void MilliTimer.fired() {
+
+ 	my_msg_t* mess = (my_msg_t*)(call Packet.getPayload(&packet, sizeof(my_msg_t)));
 	if(mess == NULL){
 		return ;
 	}
 	mess->id = TOS_NODE_ID;
+	printf("message by: %d\n", TOS_NODE_ID);
 	
 	if(call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(my_msg_t)) == SUCCESS){
-		dbg("radio", "Id sent.\n");
+		//printf("sent id\n");
+    	//printfflush();
 	}
- }        
-
-  //Insert the Node at the head of the list
-  void insertNode(struct Node** h, uint8_t id, uint8_t count){
-  	struct Node* elem = (struct Node*) malloc(sizeof(struct Node));
-  	elem->rec_id = id;
-  	elem->counter = count;
-  	elem->next = (*h);
-  	(*h) = elem;
-  }
-  
-  //Find the counter of sent messages from a specific mote, given the id
-  int searchCounter(struct Node** h, uint8_t id)
-  {
-  	struct Node *temp = *h;
-  	while(temp!=NULL && temp->rec_id!=id){
-  		temp = temp->next;
-  	}
-  	if(temp!=NULL)
-  		return temp->counter;
-  	else
-  		return -1;
-  }
-  
-  //Update the counter
-  void updateCounter(struct Node** h, uint8_t id, uint8_t count){
-  	struct Node *temp = *h;
-  	while(temp!=NULL && temp->rec_id!=id){
-  		temp = temp->next;
-  	}
-  	if(temp!=NULL)
-  		temp->counter = count;
-  	else
-  		dbg("radio", "error, no mote id associated to the counter\n");
-  }
-
-  //***************** Boot interface ********************//
-  event void Boot.booted() {
-	dbg("boot","Application booted on mote %d.\n", TOS_NODE_ID);
-	call SplitControl.start();
-  }
-
-  //***************** SplitControl interface ********************//
-  event void SplitControl.startDone(error_t err){
-    if(err == SUCCESS){
-    	dbg("radio", "Radio ON, timer starts\n");
-		call NodeTimer.startPeriodic(500);
-		
-    }else{
-    	dbg("radio", "Radio error, trying to turning on again...\n");
-    	call SplitControl.start();
-    }
-  }
-  
-  event void SplitControl.stopDone(error_t err){}
-
-  //***************** MilliTimer interface ********************//
-  event void NodeTimer.fired() {
-  	dbg("timer", "Timer fired, send a request\n");
- 	dbg("radio", "Send request\n");
- 	sendReq();
-  
   }
   
 
   //********************* AMSend interface ****************//
   event void AMSend.sendDone(message_t* buf,error_t err) {
-	if(&packet == buf){
-		dbg("radio", "Packet sent at time %s!\n", sim_time_string());
+	/*if(&packet == buf){
+		printf("packet sent\n");
+    	printfflush();
 	}else{
-		dbgerror("radio", "Radio error %s!\n", err);
-	}
+		printf("error, packet not sent\n");
+    	printfflush();
+	}*/
   }
 
   //***************************** Receive interface *****************//
-  event message_t* Receive.receive(message_t* buf,void* payload, uint8_t len) {
+  event message_t* Receive.receive(message_t* buf, void* payload, uint8_t len) {
 	if(len != sizeof(my_msg_t)){
-		dbgerror("radio", "Packet malformed\n");
+		printf("packet malformed\n");
+    	printfflush();
 		return buf;
 	}else{
 		my_msg_t* mess = (my_msg_t*)payload;
-		dbg("radio", "Received a message at time %s!\n", sim_time_string());
-		dbg_clear("packet", "\t\tID: %u\n", mess->id);
-		rec_counter = searchCounter(&head, mess->id);
+		printf("message received\n");
+		printf("received id: %d\n", mess->id);
+    	printfflush();
+		setIndex(mess->id);
 		
-		if(rec_counter == -1){
-			//add node to list
-			insertNode(&head, mess->id, 1);
+		if(rec_id[index] == 0){
+			//doesn't exist an index corresponding to that mote id
+			//index is the first free position
+			rec_id[index] = mess->id;
+			rec_counter[index] = 1;
+			
 		}
-		else if(rec_counter == 9){
-			rec_counter++;
-			printf("S Mote: %ld\n , R Mote: %ld\n", mess->id, TOS_NODE_ID);
-  			printfflush();
-  			rec_counter = 0;
-  			updateCounter(&head, mess->id, rec_counter);
-		}else{
-			rec_counter++;
-			updateCounter(&head, mess->id, rec_counter);
+		else{
+			//already exist the index for that mote 
+			if(rec_counter[index] == 9){
+				rec_counter[index]++;
+				printf("S Mote: %d\n , R Mote: %d\n", mess->id, TOS_NODE_ID);
+	  			printfflush();
+	  			rec_counter[index] = 0;
+			}else{
+				rec_counter[index]++;
+			}
 		}
-		
 		
 		return buf;
 	}

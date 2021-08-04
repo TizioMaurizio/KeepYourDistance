@@ -99,7 +99,12 @@ module ProjectKYDC @safe() {
 			//already exist the index for that mote 
 			if(rec_counter[index] == 9){
 				rec_counter[index]++;
-				printf("S Mote: %d , R Mote: %d\n", mess->id, TOS_NODE_ID);
+				//TOS_NODE_ID
+				printf("\n");
+				//printf("{\"value1\":\"%d\",\"value2\":\"%d\"}", (int)mess->id, (int)TOS_NODE_ID);
+				printf("{\"value1\":\"%d\",", (int)mess->id);
+				printf("\"value2\":\"%d\"}", (int)TOS_NODE_ID);
+				printf("\n");
 	  			printfflush();
 	  			rec_counter[index] = 0;
 			}else{

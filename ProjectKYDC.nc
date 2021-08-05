@@ -93,8 +93,6 @@ module ProjectKYDC @safe() {
 			//index is the first free position
 			rec_id[index] = mess->id;
 			rec_counter[index] = 1;
-			printf("rec_id: %d counter: %d index %d\n", rec_id[index], rec_counter[index], index);
-				printfflush();
 			
 		}
 		else{
@@ -111,8 +109,6 @@ module ProjectKYDC @safe() {
 	  			rec_counter[index] = 0;
 			}else{
 				rec_counter[index]++;
-				printf("rec_id: %d counter: %d index %d\n", rec_id[index], rec_counter[index], index);
-				printfflush();
 			}
 		}
 		

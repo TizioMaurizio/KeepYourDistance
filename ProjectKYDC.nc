@@ -93,6 +93,8 @@ module ProjectKYDC @safe() {
 			//index is the first free position
 			rec_id[index] = mess->id;
 			rec_counter[index] = 1;
+			printf("rec_id: %d counter: %d index %d\n", rec_id[index], rec_counter[index], index);
+				printfflush();
 			
 		}
 		else{
@@ -101,14 +103,16 @@ module ProjectKYDC @safe() {
 				rec_counter[index]++;
 				//TOS_NODE_ID
 				printf("\n");
-				//printf("{\"value1\":\"%d\",\"value2\":\"%d\"}", (int)mess->id, (int)TOS_NODE_ID);
-				printf("{\"value1\":\"%d\",", (int)mess->id);
-				printf("\"value2\":\"%d\"}", (int)TOS_NODE_ID);
+				//printf("{\"value1\":\"%d\",\"value2\":\"%d\"}", (int)TOS_NODE_ID, (int)mess->id);
+				printf("{\"value1\":\"%d\",", (int)TOS_NODE_ID);
+				printf("\"value2\":\"%d\"}", (int)mess->id);
 				printf("\n");
 	  			printfflush();
 	  			rec_counter[index] = 0;
 			}else{
 				rec_counter[index]++;
+				printf("rec_id: %d counter: %d index %d\n", rec_id[index], rec_counter[index], index);
+				printfflush();
 			}
 		}
 		

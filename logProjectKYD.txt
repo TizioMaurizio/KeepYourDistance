@@ -1,0 +1,585 @@
+********************************************
+*                                          *
+*             TOSSIM Script                *
+*                                          *
+********************************************
+Initializing mac....
+Initializing radio channels....
+    using topology file: topology.txt
+    using noise file: meyer-heavy.txt
+Initializing simulator....
+Activate debug message on channel init
+Activate debug message on channel boot
+Activate debug message on channel boot
+Activate debug message on channel boot
+Activate debug message on channel radio
+Activate debug message on channel radio_send
+Activate debug message on channel radio_ack
+Activate debug message on channel radio_rec
+Activate debug message on channel radio_pack
+Activate debug message on channel role
+Creating node 1...
+>>>Will boot at time 0 [sec]
+Creating node 2...
+>>>Will boot at time 2 [sec]
+Creating node 3...
+>>>Will boot at time 4 [sec]
+Creating node 4...
+>>>Will boot at time 6 [sec]
+Creating node 5...
+>>>Will boot at time 8 [sec]
+Creating radio channels...
+>>>Setting radio channel from node  1  to node  2  with gain  -60.0  dBm
+>>>Setting radio channel from node  2  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  4  with gain  -30.0  dBm
+>>>Setting radio channel from node  4  to node  1  with gain  -30.0  dBm
+>>>Setting radio channel from node  1  to node  5  with gain  -80.0  dBm
+>>>Setting radio channel from node  5  to node  1  with gain  -80.0  dBm
+Initializing Closest Pattern Matching (CPM)...
+Reading noise model data file: meyer-heavy.txt
+Loading:##Done!
+>>>Creating noise model for node: 1
+>>>Creating noise model for node: 2
+>>>Creating noise model for node: 3
+>>>Creating noise model for node: 4
+>>>Creating noise model for node: 5
+Start simulation with TOSSIM! 
+
+
+
+DEBUG (1): Application booted on mote 1.
+DEBUG (1): Timer started on mote 1
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (1): Packet sent at time 0:0:0.489929199 from mote 1
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (1): Packet sent at time 0:0:0.982635472 from mote 1
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (1): Packet sent at time 0:0:1.472763025 from mote 1
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (1): Packet sent at time 0:0:1.961029016 from mote 1
+DEBUG (2): Application booted on mote 2.
+DEBUG (2): Timer started on mote 2
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (2): Received first packet from 1, counter 1
+DEBUG (1): Packet sent at time 0:0:2.448745694 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received first packet from 2, counter 1
+DEBUG (2): Packet sent at time 0:0:2.490173338 from mote 2
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (2): Received a packet from 1, counter 2
+DEBUG (1): Packet sent at time 0:0:2.935897800 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 2
+DEBUG (2): Packet sent at time 0:0:2.985473590 from mote 2
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (2): Received a packet from 1, counter 3
+DEBUG (1): Packet sent at time 0:0:3.421554554 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 3
+DEBUG (2): Packet sent at time 0:0:3.466171266 from mote 2
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (2): Received a packet from 1, counter 4
+DEBUG (1): Packet sent at time 0:0:3.913009614 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (2): Packet sent at time 0:0:3.959136937 from mote 2
+DEBUG (3): Application booted on mote 3.
+DEBUG (3): Timer started on mote 3
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (2): Received a packet from 1, counter 5
+DEBUG (1): Packet sent at time 0:0:4.401077242 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 4
+DEBUG (2): Packet sent at time 0:0:4.450180012 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:4.494506809 from mote 3
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (2): Received a packet from 1, counter 6
+DEBUG (1): Packet sent at time 0:0:4.885559076 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 5
+DEBUG (2): Packet sent at time 0:0:4.932281489 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:4.986846873 from mote 3
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (2): Received a packet from 1, counter 7
+DEBUG (1): Packet sent at time 0:0:5.376586892 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 6
+DEBUG (2): Packet sent at time 0:0:5.420059201 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:5.468399037 from mote 3
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (2): Received a packet from 1, counter 8
+DEBUG (1): Packet sent at time 0:0:5.864501933 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 7
+DEBUG (2): Packet sent at time 0:0:5.915466264 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:5.957504256 from mote 3
+DEBUG (4): Application booted on mote 4.
+DEBUG (4): Timer started on mote 4
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (4): Received first packet from 1, counter 1
+DEBUG (2): Received a packet from 1, counter 9
+DEBUG (1): Packet sent at time 0:0:6.353729222 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 8
+DEBUG (2): Packet sent at time 0:0:6.403549151 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:6.445220935 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received first packet from 4, counter 1
+DEBUG (4): Packet sent at time 0:0:6.494796724 from mote 4
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (4): Received a packet from 1, counter 2
+DEBUG (2): Received last packet from 1. Motes 2 and 1 are too close
+DEBUG (1): Packet sent at time 0:0:6.844039879 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 9
+DEBUG (2): Packet sent at time 0:0:6.885864250 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:6.934082015 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 2
+DEBUG (4): Packet sent at time 0:0:6.983077974 from mote 4
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (4): Received a packet from 1, counter 3
+DEBUG (2): Received a packet from 1, counter 1
+DEBUG (1): Packet sent at time 0:0:7.328094469 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received last packet from 2. Motes 1 and 2 are too close
+DEBUG (2): Packet sent at time 0:0:7.376327494 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:7.428146312 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 3
+DEBUG (4): Packet sent at time 0:0:7.467086788 from mote 4
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (4): Received a packet from 1, counter 4
+DEBUG (2): Received a packet from 1, counter 2
+DEBUG (1): Packet sent at time 0:0:7.816024769 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 1
+DEBUG (2): Packet sent at time 0:0:7.868942214 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:7.913619962 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 4
+DEBUG (4): Packet sent at time 0:0:7.963333080 from mote 4
+DEBUG (5): Application booted on mote 5.
+DEBUG (5): Timer started on mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received first packet from 1, counter 1
+DEBUG (4): Received a packet from 1, counter 5
+DEBUG (2): Received a packet from 1, counter 3
+DEBUG (1): Packet sent at time 0:0:8.307586640 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 2
+DEBUG (2): Packet sent at time 0:0:8.353927585 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:8.402328455 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 5
+DEBUG (4): Packet sent at time 0:0:8.442901612 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received first packet from 5, counter 1
+DEBUG (5): Packet sent at time 0:0:8.489929199 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (4): Received a packet from 1, counter 6
+DEBUG (2): Received a packet from 1, counter 4
+DEBUG (1): Packet sent at time 0:0:8.794815039 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 3
+DEBUG (2): Packet sent at time 0:0:8.842925994 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:8.886459339 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 6
+DEBUG (4): Packet sent at time 0:0:8.938735919 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 2
+DEBUG (5): Packet sent at time 0:0:8.983428925 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 2
+DEBUG (4): Received a packet from 1, counter 7
+DEBUG (2): Received a packet from 1, counter 5
+DEBUG (1): Packet sent at time 0:0:9.286849930 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 4
+DEBUG (2): Packet sent at time 0:0:9.329238872 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:9.378417936 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 7
+DEBUG (4): Packet sent at time 0:0:9.423614479 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 3
+DEBUG (5): Packet sent at time 0:0:9.467315669 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 3
+DEBUG (4): Received a packet from 1, counter 8
+DEBUG (2): Received a packet from 1, counter 6
+DEBUG (1): Packet sent at time 0:0:9.768508904 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 5
+DEBUG (2): Packet sent at time 0:0:9.821685747 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:9.860671999 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 8
+DEBUG (4): Packet sent at time 0:0:9.908187864 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 4
+DEBUG (5): Packet sent at time 0:0:9.955139158 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 4
+DEBUG (4): Received a packet from 1, counter 9
+DEBUG (2): Received a packet from 1, counter 7
+DEBUG (1): Packet sent at time 0:0:10.259490944 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 6
+DEBUG (2): Packet sent at time 0:0:10.306915257 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:10.352951028 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 9
+DEBUG (4): Packet sent at time 0:0:10.403961136 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 5
+DEBUG (5): Packet sent at time 0:0:10.450530962 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 5
+DEBUG (4): Received last packet from 1. Motes 4 and 1 are too close
+DEBUG (2): Received a packet from 1, counter 8
+DEBUG (1): Packet sent at time 0:0:10.743347171 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 7
+DEBUG (2): Packet sent at time 0:0:10.792449941 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:10.839447011 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received last packet from 4. Motes 1 and 4 are too close
+DEBUG (4): Packet sent at time 0:0:10.888687109 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 6
+DEBUG (5): Packet sent at time 0:0:10.939147904 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 6
+DEBUG (4): Received a packet from 1, counter 1
+DEBUG (2): Received a packet from 1, counter 9
+DEBUG (1): Packet sent at time 0:0:11.235687235 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 8
+DEBUG (2): Packet sent at time 0:0:11.282012922 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:11.329483011 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 1
+DEBUG (4): Packet sent at time 0:0:11.380279497 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 7
+DEBUG (5): Packet sent at time 0:0:11.420349117 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 7
+DEBUG (4): Received a packet from 1, counter 2
+DEBUG (2): Received last packet from 1. Motes 2 and 1 are too close
+DEBUG (1): Packet sent at time 0:0:11.723663311 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 9
+DEBUG (2): Packet sent at time 0:0:11.768203730 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:11.821990921 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 2
+DEBUG (4): Packet sent at time 0:0:11.861007690 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 8
+DEBUG (5): Packet sent at time 0:0:11.911682107 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 8
+DEBUG (4): Received a packet from 1, counter 3
+DEBUG (2): Received a packet from 1, counter 1
+DEBUG (1): Packet sent at time 0:0:12.212829566 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received last packet from 2. Motes 1 and 2 are too close
+DEBUG (2): Packet sent at time 0:0:12.263366654 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:12.306442237 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 3
+DEBUG (4): Packet sent at time 0:0:12.357772778 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 9
+DEBUG (5): Packet sent at time 0:0:12.402694664 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (4): Received a packet from 1, counter 4
+DEBUG (2): Received a packet from 1, counter 2
+DEBUG (1): Packet sent at time 0:0:12.705429028 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 1
+DEBUG (2): Packet sent at time 0:0:12.746932965 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:12.797119103 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 4
+DEBUG (4): Packet sent at time 0:0:12.844345053 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received last packet from 5. Motes 1 and 5 are too close
+DEBUG (5): Packet sent at time 0:0:12.891571003 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 9
+DEBUG (4): Received a packet from 1, counter 5
+DEBUG (2): Received a packet from 1, counter 3
+DEBUG (1): Packet sent at time 0:0:13.191558801 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 2
+DEBUG (2): Packet sent at time 0:0:13.236694309 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:13.281372056 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 5
+DEBUG (4): Packet sent at time 0:0:13.330413792 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 1
+DEBUG (5): Packet sent at time 0:0:13.377410861 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received last packet from 1. Motes 5 and 1 are too close
+DEBUG (4): Received a packet from 1, counter 6
+DEBUG (2): Received a packet from 1, counter 4
+DEBUG (1): Packet sent at time 0:0:13.679107633 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 3
+DEBUG (2): Packet sent at time 0:0:13.725891081 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:13.773498499 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 6
+DEBUG (4): Packet sent at time 0:0:13.822372388 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 2
+DEBUG (5): Packet sent at time 0:0:13.866973842 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 1
+DEBUG (4): Received a packet from 1, counter 7
+DEBUG (2): Received a packet from 1, counter 5
+DEBUG (1): Packet sent at time 0:0:14.163238517 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 4
+DEBUG (2): Packet sent at time 0:0:14.209976189 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:14.258270248 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 7
+DEBUG (4): Packet sent at time 0:0:14.305541974 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 3
+DEBUG (5): Packet sent at time 0:0:14.355621301 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 2
+DEBUG (4): Received a packet from 1, counter 8
+DEBUG (2): Received a packet from 1, counter 6
+DEBUG (1): Packet sent at time 0:0:14.657791093 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 5
+DEBUG (2): Packet sent at time 0:0:14.697143554 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:14.750427208 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 8
+DEBUG (4): Packet sent at time 0:0:14.791458125 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 4
+DEBUG (5): Packet sent at time 0:0:14.843154875 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (4): Received a packet from 1, counter 9
+DEBUG (2): Received a packet from 1, counter 7
+DEBUG (1): Packet sent at time 0:0:15.140991196 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 6
+DEBUG (2): Packet sent at time 0:0:15.191726647 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:15.237197846 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 9
+DEBUG (4): Packet sent at time 0:0:15.287780710 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 5
+DEBUG (5): Packet sent at time 0:0:15.332458458 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 3
+DEBUG (4): Received last packet from 1. Motes 4 and 1 are too close
+DEBUG (2): Received a packet from 1, counter 8
+DEBUG (1): Packet sent at time 0:0:15.626205447 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 7
+DEBUG (2): Packet sent at time 0:0:15.673751830 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:15.724990818 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received last packet from 4. Motes 1 and 4 are too close
+DEBUG (4): Packet sent at time 0:0:15.768981924 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 6
+DEBUG (5): Packet sent at time 0:0:15.822570752 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (4): Received a packet from 1, counter 1
+DEBUG (2): Received a packet from 1, counter 9
+DEBUG (1): Packet sent at time 0:0:16.116668691 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 8
+DEBUG (2): Packet sent at time 0:0:16.162277219 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:16.216369584 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 1
+DEBUG (4): Packet sent at time 0:0:16.262344321 from mote 4
+DEBUG (5): Timer fired on mote 5, send a request
+DEBUG (5): Mote 5 Request sent.
+DEBUG (1): Received a packet from 5, counter 7
+DEBUG (5): Packet sent at time 0:0:16.305541974 from mote 5
+DEBUG (1): Timer fired on mote 1, send a request
+DEBUG (1): Mote 1 Request sent.
+DEBUG (5): Received a packet from 1, counter 4
+DEBUG (4): Received a packet from 1, counter 2
+DEBUG (2): Received last packet from 1. Motes 2 and 1 are too close
+DEBUG (1): Packet sent at time 0:0:16.603805538 from mote 1
+DEBUG (2): Timer fired on mote 2, send a request
+DEBUG (2): Mote 2 Request sent.
+DEBUG (1): Received a packet from 2, counter 9
+DEBUG (2): Packet sent at time 0:0:16.657119710 from mote 2
+DEBUG (3): Timer fired on mote 3, send a request
+DEBUG (3): Mote 3 Request sent.
+DEBUG (3): Packet sent at time 0:0:16.697784419 from mote 3
+DEBUG (4): Timer fired on mote 4, send a request
+DEBUG (4): Mote 4 Request sent.
+DEBUG (1): Received a packet from 4, counter 2
+DEBUG (4): Packet sent at time 0:0:16.749237029 from mote 4
+
+
+
+Simulation finished!
+

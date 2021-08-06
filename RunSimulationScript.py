@@ -64,9 +64,27 @@ print ">>>Will boot at time",  time1/t.ticksPerSecond(), "[sec]";
 
 print "Creating node 2...";
 node2 = t.getNode(2);
-time2 = 5*t.ticksPerSecond();
+time2 = 2*t.ticksPerSecond();
 node2.bootAtTime(time2);
 print ">>>Will boot at time", time2/t.ticksPerSecond(), "[sec]";
+
+print "Creating node 3...";
+node3 = t.getNode(3);
+time3 = 4*t.ticksPerSecond();
+node3.bootAtTime(time3);
+print ">>>Will boot at time", time3/t.ticksPerSecond(), "[sec]";
+
+print "Creating node 4...";
+node4 = t.getNode(4);
+time4 = 6*t.ticksPerSecond();
+node4.bootAtTime(time4);
+print ">>>Will boot at time", time4/t.ticksPerSecond(), "[sec]";
+
+print "Creating node 5...";
+node5 = t.getNode(5);
+time5 = 8*t.ticksPerSecond();
+node5.bootAtTime(time5);
+print ">>>Will boot at time", time5/t.ticksPerSecond(), "[sec]";
 
 
 print "Creating radio channels..."
@@ -98,17 +116,17 @@ for line in lines:
             mid_compl = 0;
             sys.stdout.write ("#")
             sys.stdout.flush()
-        for i in range(1, 3):
+        for i in range(1, 6):
             t.getNode(i).addNoiseTraceReading(val)
 print "Done!";
 
-for i in range(1, 3):
+for i in range(1, 6):
     print ">>>Creating noise model for node:",i;
     t.getNode(i).createNoiseModel()
 
 print "Start simulation with TOSSIM! \n\n\n";
 
-for i in range(0,1200):
+for i in range(0,2000):
 	t.runNextEvent()
 	
 print "\n\n\nSimulation finished!";

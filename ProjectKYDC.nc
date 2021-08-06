@@ -37,16 +37,17 @@ module ProjectKYDC @safe() {
      
  
   event void Boot.booted() {
-
+	dbg("boot","Application booted on mote %d.\n", TOS_NODE_ID);
 	call AMControl.start();
   }
 
   //***************** SplitControl interface ********************//
   event void AMControl.startDone(error_t err){
     if(err == SUCCESS){
-    
+    	dbg("radio", "Timer started on mote %d\n", TOS_NODE_ID);
 		call MilliTimer.startPeriodic(500);		
     }else{
+    	dbg("radio", "Radio error, trying to turning on again...\n");
     	call AMControl.start();
     }
   }
@@ -55,15 +56,16 @@ module ProjectKYDC @safe() {
 
   //***************** MilliTimer interface ********************//
   event void MilliTimer.fired(){
+  	dbg("timer", "Timer fired on mote %d, send a request\n", TOS_NODE_ID);
     if (locked) {
       return;
     }
     else {
       ((my_msg_t*)call Packet.getPayload(&packet, sizeof(my_msg_t)))->id = TOS_NODE_ID;
 
-	
 	  if (call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(my_msg_t)) == SUCCESS) {
 		locked = TRUE;
+		dbg("radio", "Mote %d Request sent.\n", TOS_NODE_ID);
       }
     }  
 	
@@ -72,8 +74,8 @@ module ProjectKYDC @safe() {
 
   //********************* AMSend interface ****************//
   event void AMSend.sendDone(message_t* buf,error_t err) {
-	
 	if (&packet == buf) {
+	  dbg("radio", "Packet sent at time %s from mote %d\n", sim_time_string(), TOS_NODE_ID);
       locked = FALSE;
     }
   }
@@ -81,7 +83,7 @@ module ProjectKYDC @safe() {
   //***************************** Receive interface *****************//
   event message_t* Receive.receive(message_t* buf, void* payload, uint8_t len) {
 	if(len != sizeof(my_msg_t)){
-		
+		dbgerror("radio", "Packet received by %d malformed\n", TOS_NODE_ID);
 		return buf;
 	}else{
 		my_msg_t* mess = (my_msg_t*)payload;
@@ -91,9 +93,10 @@ module ProjectKYDC @safe() {
 		if(rec_id[index] == 0){
 			//doesn't exist an index corresponding to that mote id
 			//index is the first free position
+			
 			rec_id[index] = mess->id;
 			rec_counter[index] = 1;
-			
+			dbg("radio", "Received first packet from %d, counter %d\n", rec_id[index], rec_counter[index]);
 		}
 		else{
 			//already exist the index for that mote 
@@ -107,8 +110,10 @@ module ProjectKYDC @safe() {
 				printf("\n");
 	  			printfflush();
 	  			rec_counter[index] = 0;
+	  			dbg("radio", "Received last packet from %d. Motes %d and %d are too close\n", rec_id[index], TOS_NODE_ID, rec_id[index]);
 			}else{
 				rec_counter[index]++;
+				dbg("radio", "Received a packet from %d, counter %d\n", rec_id[index], rec_counter[index]);
 			}
 		}
 		
